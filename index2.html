@@ -17,8 +17,28 @@
     }
 
     .card{
-        height: 370px;
-        color:cornflowerblue;
+        height: 380px;
+        background: linear-gradient(to top, #000000 -3%, #ffffff 107%);
+        border-top-left-radius: 30px 30px;
+        border-top-right-radius: 30px 30px;
+        border-width:10px;  
+        border-style:outset;
+    }
+    .form-control{
+        border-width:5px;  
+        border-style:groove;
+    }
+    #status{
+        height: 50px;
+        border-width:5px;  
+        border-style:ridge;
+    }
+    button{
+        border-width:2px;  
+        border-style:ridge;
+    }
+    .table{
+        background: linear-gradient(to top, #000000 -3%, #ffffff 107%);
     }
 </style>
 
@@ -105,10 +125,10 @@
         <br><br>
         <div class="row">
            <table class="text-center table table-hover table-bordered">
-               <thead class="table-success">
+               <thead class="table">
                    <tr>
                        <th>Topic</th>
-                       <th>Message</th>
+                       <th>Payload</th>
                        <th>Timestamp</th>
                    </tr>
                </thead>
