@@ -66,6 +66,23 @@ $('#btn-connect').on('click', function () {
       })
     }
   })
+  $("#btn-unsub").click(function () {
+    var topsub = $("#topic-sub").val();
+    if (topsub == "") {
+      Swal.fire({
+        type: 'error',
+        title: 'Topic is Required',
+      })
+    } else {
+      client.unsubscribe(topsub);
+      Swal.fire({
+        type: 'success',
+        title: 'Unsubscribe Successfully',
+      })
+    }
+    $("#btn-unsub").removeClass("alert-success")
+    $("#btn-unsub").addClass("alert-secondary")
+  })//end unsubscribe
   //Message
   client.on("message", function (topic, payload) {
     var row = $("<tr>")
