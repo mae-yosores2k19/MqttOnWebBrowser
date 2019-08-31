@@ -15,21 +15,27 @@ $('#btn-connect').on('click', function () {
   // connect
   console.log("connect button clicked..")
   client = mqtt.connect("ws://broker.hivemq.com:8000/mqtt")
-  $("#status").text("connecting")
-  $("#status").removeClass("alert-secondary")
-  $("#status").addClass("alert-warning")
+  $("#status").text("Connecting....")
+  $("#status").css("color", "yellow")
+  $("#status").css("font-style", "italic")
+  $("#status").css("font-weight", "bold")
+  // $("#status").removeClass("alert-secondary")
+  // $("#status").addClass("alert-warning")
   client.on("connect", function () {
     console.log("succ")
-    $("#status").text("Connected")
-    $("#status").removeClass("alert-warning")
-    $("#status").addClass("alert-success")
+    $("#status").text("Connected Successfully!")
+    $("#status").css("color", "green")
+    $("#status").css("font-style", "italic")
+    $("#status").css("font-weight", "bold")
+    // $("#status").removeClass("alert-warning")
+    // $("#status").addClass("alert-success")
   });// end connect
 
   $(".btn-disconnect").click(function () {
     client.end();
     $("#status").text("Disconnected")
-    $("#status").removeClass("alert-success")
-    $("#status").addClass("alert-secondary")
+    $("#status").css("color", "red")
+
   })//end disconnect
 
   //Publish 

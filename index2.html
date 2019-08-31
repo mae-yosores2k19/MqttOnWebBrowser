@@ -10,66 +10,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="index.css">
 </head>
-<style>
-    html body{
-        height: 100%;
-        background-image: url("https://www.stickers-muraux.fr/ar-stickers-panda-24549.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-       
-    }
 
-    .card{
-        height: 380px;
-        background: linear-gradient(to top, rgba(56, 53, 53, 0.5) -3%, hsla(0, 0%, 100%, 0.425) 107%);
-        border-top-left-radius: 30px 30px;
-        border-top-right-radius: 30px 30px;
-        border-width:10px;  
-        border-style:outset;
-    }
-    .form-control{
-        border-width:5px;  
-        border-style:groove;
-    }
-    #status{
-        height: 50px;
-        border-width:5px;  
-        border-style:ridge;
-    }
-    button{
-        border-width:2px;  
-        border-style:ridge;
-    }
-    .table{
-        background-color: #5351516b;
-        
-        
-        /* border-width:10px;  
-        border-style:outset; */
-
-    }
-    th, tr, thead{
-        font-size: 15px;
-        border: 5px solid black;
-        color: white;
-
-    }
-    h4{
-       color: black; 
-       text-align: center;
-       margin-left: 40%;
-       margin-right: 46%;
-       font-size: 35px;
-       background-color: #5351516b;
-       border-style: outset;
-    }
-    h2{
-        font-family: fantasy;
-        text-align: center;
-        padding-top: 20px;
-    }
-</style>
 
 <body>
     <h2>=^^= Mqtt On Web Browser =^^=</h2>
@@ -87,20 +30,20 @@
                             </div>
                             <div class="card-body">
                                 <label for="input-broker-ws"> Address:</label>
-                                <br><br>
-                                <input type="text" class="form-control" id="input-broker-ws" value="ws://broker.hivemq.com:8000/mqtt"><br><br>
+
+                                <input type="text" class="form-control" id="input-broker-ws" value="ws://broker.hivemq.com:8000/mqtt"><br>
 
                                 <button id="btn-connect" class="btn btn-outline-success">Connect</button>
 
                                 <button class="btn btn-outline-danger pure-button btn-disconnect">Disconnect</button>
                             </div>
                         </center>
+                        <label for="status" id ="sta">Status:</label>
 
-                        <div class="card-footer">
-                            <div id="status" class="text-center alert alert-secondary">
-                                Disconnected
-                            </div>
-                        </div>
+                        <center>
+                            <p id="status"><b><i>Disconnected</i></b></p>
+                        </center>
+
                     </div>
                 </div>
             </div>
@@ -155,9 +98,9 @@
         </div>
 
         <!-- row1 -->
-        <br><br>
+        <br>
         <h4>Message</h4>
-        <div class="row">
+        <!-- <div class="row">
             <table class="text-center table table-bordered">
                 <thead class="table">
                     <tr>
@@ -170,14 +113,62 @@
 
                 </tbody>
             </table>
-        </div>
-    </div>
+        </div> -->
 
-    <!-- script -->
-    <script src="browserMqtt.js"></script>
-    <script src="controller.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
+        <div class="table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Topic</th>
+                        <th>Payload</th>
+                        <th>Timestamp</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+
+        <!-- <div class="tableFixHead">
+            <table>
+                <thead>
+                    <tr>
+                        <th>TH 1</th>
+                        <th>TH 2</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>A1</td>
+                        <td>A2</td>
+                    </tr>
+                    <tr>
+                        <td>B1</td>
+                        <td>B2</td>
+                    </tr>
+                    <tr>
+                        <td>C1</td>
+                        <td>C2</td>
+                    </tr>
+                    <tr>
+                        <td>D1</td>
+                        <td>D2</td>
+                    </tr>
+                    <tr>
+                        <td>E1</td>
+                        <td>E2</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div> -->
+
+        <!-- script -->
+        <script src="browserMqtt.js"></script>
+        <script src="controller.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
 
 
 </body>
