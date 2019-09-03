@@ -7,7 +7,7 @@ html body{
     }
 
     .card{
-        height: 330px;
+        height: 370px;
         background: linear-gradient(to top, rgba(56, 53, 53, 0.5) -3%, hsla(0, 0%, 100%, 0.425) 107%);
         border-top-left-radius: 30px 30px;
         border-top-right-radius: 30px 30px;
@@ -27,6 +27,7 @@ html body{
     }
     h4{
        color: black; 
+       font-size: 35px;
        text-align: center;
        margin-left: 40%;
        margin-right: 46%;
@@ -34,17 +35,30 @@ html body{
        border-style: outset;
     }
     h2{
-        font-family: fantasy;
+        font-family: cursive;
         text-align: center;
         padding-top: 20px;
+        color: black; 
+        font-size: 35px;
+        text-align: center;
+        background-color: #423e3e2c;
+        border-style: ridge;
+        margin-left: 20%;
+        margin-right: 26%;
     }
-     .table          { overflow-y: auto; height: 200px;
+    .table{ 
+        overflow-y: auto; 
+        height: 300px;
         background-color: #5351516b;
      }
-    .table thead th { position: sticky; top: 0; }
+    .table thead th { 
+        position: sticky;
+        top: 0; }
 
 /* Just common table stuff. Really. */
-    table  { border-collapse: collapse; width: 100%; }
+    table  {
+         border-collapse: collapse;
+         width: 100%; }
     td , tr { 
         padding: 8px 16px;
         border: 1px solid black;
@@ -54,7 +68,11 @@ html body{
         background:#eee;
         border: 1px solid black;
         color: black;
+        font-size: 20px;
+        text-align: center;
     }
     #sta{
         margin-left: 10%;
+        font-family: cursive;
+        font-size: 25px;
     }
