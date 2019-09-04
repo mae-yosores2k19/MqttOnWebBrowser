@@ -7,13 +7,16 @@ html body{
     }
 
     .card{
-        height: 370px;
+        height: 345px;
         background: linear-gradient(to top, rgba(56, 53, 53, 0.5) -3%, hsla(0, 0%, 100%, 0.425) 107%);
         border-top-left-radius: 30px 30px;
         border-top-right-radius: 30px 30px;
         border-width:10px;  
         border-style:outset;
     }
+    /* .card #sms{
+        widows: 510px;
+    } */
     .form-control{
         border-width:5px;  
         border-style:groove;
@@ -26,11 +29,11 @@ html body{
         border-style:ridge;
     }
     h4{
-       color: black; 
+       color: rgb(38, 109, 6); 
        font-size: 35px;
        text-align: center;
-       margin-left: 40%;
-       margin-right: 46%;
+       margin-left: 23%;
+       margin-right: 25%;
        background-color: #5351516b;
        border-style: outset;
     }
@@ -38,7 +41,7 @@ html body{
         font-family: cursive;
         text-align: center;
         padding-top: 20px;
-        color: black; 
+        color: rgb(38, 109, 6);
         font-size: 35px;
         text-align: center;
         background-color: #423e3e2c;
@@ -48,7 +51,7 @@ html body{
     }
     .table{ 
         overflow-y: auto; 
-        height: 300px;
+        height: 265px;
         background-color: #5351516b;
      }
     .table thead th { 
@@ -58,7 +61,7 @@ html body{
 /* Just common table stuff. Really. */
     table  {
          border-collapse: collapse;
-         width: 100%; }
+         }
     td , tr { 
         padding: 8px 16px;
         border: 1px solid black;

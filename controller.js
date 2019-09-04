@@ -2,14 +2,8 @@
 var client;
 
 var btnPublish = $("#publish-btn")
-
-
 // client = mqtt.connect("ws://broker.hivemq.com:8000/mqtt")
 // client.subscribe("mqtt/demo")
-
-
-
-
 // client.publish("mqtt/demo", "hello world!")
 $('#btn-connect').on('click', function () {
   // connect
@@ -30,7 +24,16 @@ $('#btn-connect').on('click', function () {
     // $("#status").removeClass("alert-warning")
     // $("#status").addClass("alert-success")
   });// end connect
+  client.on("message", function (topic, payload) {
+    var row = $("<tr>")
+    $("<td>").text(topic).appendTo($(row))
+    $("<td>").text(payload).appendTo($(row))
+    $("<td>").text(moment().format('MMMM Do YYYY, h:mm:ss a')).appendTo($(row))
+    $("#tbody").append($(row))
+    // console.log([topic, payload].join(": "));
 
+
+  })
   $(".btn-disconnect").click(function () {
     client.end();
     $("#status").text("Disconnected")
@@ -54,6 +57,15 @@ $('#btn-connect').on('click', function () {
         title: 'Publish Successfully!',
       })
     }
+
+    var row = $("<tr>")
+    $("<td>").text(topic).appendTo($(row))
+    $("<td>").text(message).appendTo($(row))
+    $("<td>").text(moment().format('MMMM Do YYYY, h:mm:ss a')).appendTo($(row))
+    $("#tbody-pub").append($(row))
+
+
+
   })
 
   //Subscribe
@@ -71,6 +83,11 @@ $('#btn-connect').on('click', function () {
         title: 'Subscribe Successfully',
       })
     }
+    var row = $("<tr>")
+    $("<td>").text(topsub).appendTo($(row))
+    $("<td>").text(moment().format('MMMM Do YYYY, h:mm:ss a')).appendTo($(row))
+    $("#tbody-sub").append($(row))
+
   })
   $("#btn-unsub").click(function () {
     var topsub = $("#topic-sub").val();
@@ -88,18 +105,11 @@ $('#btn-connect').on('click', function () {
     }
     $("#btn-unsub").removeClass("alert-success")
     $("#btn-unsub").addClass("alert-secondary")
+
+
   })//end unsubscribe
   //Message
-  client.on("message", function (topic, payload) {
-    var row = $("<tr>")
-    $("<td>").text(topic).appendTo($(row))
-    $("<td>").text(payload).appendTo($(row))
-    $("<td>").text(moment().format('MMMM Do YYYY, h:mm:ss a')).appendTo($(row))
-    $("tbody").append($(row))
-    // console.log([topic, payload].join(": "));
 
-
-  })
 
 })//end of click
 
